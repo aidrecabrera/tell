@@ -1,0 +1,3 @@
+[test]
+root = "test"
+pathIgnorePatterns = ["dist/**", "node_modules/**"]
