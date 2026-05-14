@@ -1,0 +1,44 @@
+export const TELNET_IAC = 255;
+export const TELNET_DONT = 254;
+export const TELNET_DO = 253;
+export const TELNET_WONT = 252;
+export const TELNET_WILL = 251;
+export const TELNET_SB = 250;
+export const TELNET_GA = 249;
+export const TELNET_EL = 248;
+export const TELNET_EC = 247;
+export const TELNET_AYT = 246;
+export const TELNET_AO = 245;
+export const TELNET_IP = 244;
+export const TELNET_BREAK = 243;
+export const TELNET_DM = 242;
+export const TELNET_NOP = 241;
+export const TELNET_SE = 240;
+export const TELNET_EOR = 239;
+export const TELNET_ABORT = 238;
+export const TELNET_SUSP = 237;
+export const TELNET_EOF = 236;
+export const TELNET_SYNCH = 242;
+
+export const TELNET_OPT_BINARY = 0;
+export const TELNET_OPT_ECHO = 1;
+export const TELNET_OPT_SUPPRESS_GO_AHEAD = 3;
+export const TELNET_OPT_STATUS = 5;
+export const TELNET_OPT_TIMING_MARK = 6;
+export const TELNET_OPT_TTYPE = 24;
+export const TELNET_OPT_WINDOW_SIZE = 31;
+export const TELNET_OPT_LINE_MODE = 34;
+export const TELNET_OPT_NEW_ENVIRON = 39;
+export const TELNET_OPT_COMPRESS2 = 86;
+export const TELNET_TELQUAL_IS = 0;
+export const TELNET_TELQUAL_SEND = 1;
+
+export const NEW_ENVIRON_IS = 0;
+export const NEW_ENVIRON_INFO = 2;
+export const NEW_ENVIRON_VAR = 0;
+export const NEW_ENVIRON_VALUE = 1;
+export const NEW_ENVIRON_ESC = 2;
+export const NEW_ENVIRON_USERVAR = 3;
+
+export const DEFLATE_BEST_COMPRESSION_LEVEL = 9;
+export const TEST_SERVER_PORT = 1337;
