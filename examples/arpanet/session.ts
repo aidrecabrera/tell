@@ -70,14 +70,6 @@ export class TelnetSession {
     this.client.end();
   }
 
-  public deliver(message: string): void {
-    this.client.write(message);
-  }
-
-  public getLogger(): Logger {
-    return this.log;
-  }
-
   private waitForPage(): Promise<boolean> {
     this.isPaging = true;
     this.client.write("--More-- (space to continue, q to quit) ");
@@ -152,7 +144,7 @@ export class TelnetSession {
           term: this.client.term,
           windowSize: this.client.windowSize,
           remoteAddress: this.client.env["DISPLAY"] ?? "unknown",
-          deliver: (message) => this.deliver(message),
+          deliver: (message) => this.client.write(message),
         });
       } else {
         this.log.warn(`failed login: "${this.pendingUsername}"`);

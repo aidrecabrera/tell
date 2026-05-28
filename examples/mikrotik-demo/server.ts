@@ -12,7 +12,6 @@ import {
 } from "./hardware";
 import { parseKeyValue } from "./parse-key-value";
 
-const LISTEN_PORT = 1337;
 const PROMPT_DELAY_MS = 120;
 const PING_INTERVAL_MS = 1000;
 
@@ -238,6 +237,7 @@ class RouterSession {
 
 export interface StartServerOptions {
   logger: Logger;
+  port: number;
 }
 
 export const startServer = (options: StartServerOptions) => {
@@ -359,6 +359,6 @@ export const startServer = (options: StartServerOptions) => {
     logger.error("server error: " + error.message);
   });
 
-  serverInstance.listen(LISTEN_PORT);
+  serverInstance.listen(options.port);
   return serverInstance;
 };

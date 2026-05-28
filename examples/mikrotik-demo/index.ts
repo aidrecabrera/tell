@@ -17,7 +17,7 @@ const AUTOMATION_STEPS = [
 ];
 
 const logger = createLogger("mikrotik");
-const server = startServer({ logger });
+const server = startServer({ logger, port: LISTEN_PORT });
 
 logger.info("routeros backend initialized on port " + LISTEN_PORT);
 
