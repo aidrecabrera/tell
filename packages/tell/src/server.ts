@@ -1,14 +1,18 @@
 import net from "node:net";
 
 import { Commands, Options } from "./protocol";
+import { noopLogger } from "./logger";
 import { TelnetStream } from "./telnet-stream";
 
-export const Server = (connectionListener: TelnetConnectionListener): net.Server => {
+export const Server = (connectionListener: TelnetConnectionListener, options?: ServerOptions): net.Server => {
+  const logger = options?.logger ?? noopLogger;
+
   const server = net.createServer({}, (connection) => {
     const telnetStream = new TelnetStream();
     telnetStream.attachStream(connection);
+    logger.debug("client connected");
 
-    const options = [
+    const pendingOptions = [
       Options.OPT_TTYPE,
       Options.OPT_WINDOW_SIZE,
       Options.OPT_NEW_ENVIRON,
@@ -17,9 +21,10 @@ export const Server = (connectionListener: TelnetConnectionListener): net.Server
     ];
 
     const negotiateNext = (): void => {
-      const option = options.shift();
+      const option = pendingOptions.shift();
       if (option === undefined) {
         telnetStream.negotiationCallback = undefined;
+        logger.info("client negotiated");
         server.emit("connected", telnetStream);
         return;
       }

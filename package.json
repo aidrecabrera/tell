@@ -1,17 +1,12 @@
 {
-  "name": "tell",
-  "version": "0.0.0",
+  "name": "tell-workspace",
   "private": true,
-  "type": "commonjs",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "workspaces": ["packages/tell", "examples/*"],
   "scripts": {
-    "build": "tsc --noEmit false",
-    "test": "npm run build && node --test dist/test/index.test.js",
-    "typecheck": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "@types/node": "^22.15.21",
-    "typescript": "^5.8.3"
+    "build": "npm run build --workspaces",
+    "test": "npm test --workspace=packages/tell",
+    "typecheck": "npm run typecheck --workspace=packages/tell",
+    "arpanet": "npm run build --workspaces && node examples/arpanet/dist/index.js",
+    "mikrotik": "npm run build --workspaces && node examples/mikrotik-demo/dist/index.js"
   }
 }

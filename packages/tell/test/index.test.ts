@@ -142,3 +142,44 @@ test("buffers telnet commands split across chunks", () => {
   assert.equal(stream.binary, true);
   assert.deepEqual(socket.writes, [Buffer.from([Commands.IAC, Commands.WILL, Options.OPT_BINARY])]);
 });
+
+test("Server accepts logger option without crashing", () => {
+  const { Server, noopLogger } = require("../index");
+  const server = Server(() => {}, { logger: noopLogger });
+  assert.ok(server);
+  server.close();
+});
+
+test("Server calls injected logger on connection", (t, done) => {
+  const { Server } = require("../index");
+  const messages: string[] = [];
+  const mockLogger: Logger = {
+    debug(msg: string) { messages.push(msg); },
+    info(msg: string) { messages.push(msg); },
+    warn(msg: string) { messages.push(msg); },
+    error(msg: string) { messages.push(msg); },
+    child() { return mockLogger; },
+  };
+
+  const server = Server(() => {}, { logger: mockLogger });
+  server.listen(0, () => {
+    const net = require("node:net");
+    const address = server.address();
+    const client = net.createConnection({ port: address.port, host: "127.0.0.1" });
+    client.on("connect", () => {
+      setTimeout(() => {
+        client.destroy();
+        server.close();
+        assert.ok(messages.some((msg: string) => msg.includes("connected")));
+        done();
+      }, 200);
+    });
+  });
+});
+
+test("attachStream throws when called twice", () => {
+  const stream = new TelnetStream();
+  const socket = new FakeSocket();
+  stream.attachStream(socket);
+  assert.throws(() => stream.attachStream(socket), /already has an attached stream/);
+});

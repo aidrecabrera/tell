@@ -1,4 +1,5 @@
 import { EventEmitter } from "node:events";
+import assert from "node:assert";
 import zlib from "node:zlib";
 
 import {
@@ -242,6 +243,7 @@ export class TelnetStream extends EventEmitter {
   }
 
   public attachStream(socket: SocketLike): void {
+    assert(this.stream === undefined, "TelnetStream already has an attached stream");
     this.stream = socket;
 
     socket.on("data", (buffer: ByteBuffer) => {
@@ -320,6 +322,7 @@ export class TelnetStream extends EventEmitter {
   }
 
   private handleSubNegotiation(buffer: ByteBuffer, endIndex: number): void {
+    assert(this.negotiatedOption !== undefined, "handleSubNegotiation called without negotiatedOption");
     const payload = unquoteIac(buffer.subarray(0, endIndex - 1));
     this.state = 0;
 

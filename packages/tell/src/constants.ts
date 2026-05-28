@@ -41,4 +41,3 @@ export const NEW_ENVIRON_ESC = 2;
 export const NEW_ENVIRON_USERVAR = 3;
 
 export const DEFLATE_BEST_COMPRESSION_LEVEL = 9;
-export const TEST_SERVER_PORT = 1337;
