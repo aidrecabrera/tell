@@ -2,6 +2,8 @@
 
 Telnet for Node.js in TypeScript. Wraps a raw socket into a `TelnetStream` that handles option negotiation, IAC escaping, terminal type, window size, environment variables, binary mode, and compression so you don't have to.
 
+<img src="assets/mikrotik-demo.svg" alt="MikroTik RouterOS simulator demo" style="max-width:100%;height:auto">
+
 ## Install
 
 ```sh
@@ -87,22 +89,23 @@ Login with `admin`/`admin` or `guest`/`guest`. You get a shell with `who`, `fing
 login: admin
 password:
 
-  _                   _
- | | _____   _____| | __ _  ___ ___
- | |/ _ \ \ / / _ \ |/ _` |/ __/ _ \
- | | (_) \ V /  __/ | (_| | (_|  __/
- |_|\___/ \_/ \___|_|\__,_|\___\___|
+  _             _
+ | |_____ _____| |__ _ __ ___
+ | / _ \ V / -_) / _` / _/ -_)
+ |_\___/\_/\___|_\__,_\__\___|
 
   Thu May 29 2026
   type 'help' for available commands
 
 admin@lovelace$ who
-admin  xterm-256color  80x24  3s ago  unknown
+admin   XTERM-GHOSTTY   91x45   3s ago   unknown
 admin@lovelace$ hostname
 lovelace
 admin@lovelace$ logout
 goodbye.
 ```
+
+<img src="assets/arpanet.svg" alt="Arpanet time-sharing demo" style="max-width:100%;height:auto">
 
 Start the MikroTik RouterOS simulator:
 
@@ -126,17 +129,17 @@ Password:
   MikroTik RouterOS 7.15 (c) 1999-2024 http://www.mikrotik.com/
 
 [admin@MikroTik] > /system resource print
-                   uptime: 2d14h32m7s
+                   uptime: 1h51m23s
                   version: 7.15 (stable)
-              free-memory: 12041.3MiB
-             total-memory: 15896.2MiB
-                      cpu: 13th Gen Intel(R) Core(TM) i7-13700K
-                cpu-count: 24
+              free-memory: 18337.4MiB
+             total-memory: 31970.2MiB
+                      cpu: AMD Ryzen 7 5700X 8-Core Processor
+                cpu-count: 16
 [admin@MikroTik] > /ip address print
 Flags: X - disabled, D - dynamic
- #   ADDRESS            NETWORK         INTERFACE
- 0 D 192.168.1.100/24   192.168.1.0     eth0
- 1 D 127.0.0.1/8        127.0.0.0       lo
+ #    ADDRESS            NETWORK         INTERFACE
+ 0 D  127.0.0.1/8        127.0.0.0       lo
+ 1 D  192.168.1.47/24    192.168.1.0     wlp9s0
 [admin@MikroTik] > /system identity set name=GatewayRouter
 [admin@GatewayRouter] >
 ```
