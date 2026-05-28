@@ -1,0 +1,21 @@
+{
+  "name": "example-arpanet",
+  "version": "0.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc --noEmit false",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "tell": "*",
+    "pino": "9.10.0",
+    "picocolors": "1.1.1",
+    "cli-table3": "0.6.5",
+    "figlet": "1.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.21",
+    "typescript": "5.8.3"
+  }
+}
