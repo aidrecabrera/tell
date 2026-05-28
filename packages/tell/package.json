@@ -14,5 +14,12 @@
   "devDependencies": {
     "@types/node": "22.15.21",
     "typescript": "5.8.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidrecabrera/tell.git"
+  },
+  "keywords": ["telnet", "typescript", "node", "stream", "server"],
+  "author": "aidrecabrera",
+  "license": "MIT"
 }
