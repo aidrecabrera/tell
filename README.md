@@ -7,13 +7,13 @@ Telnet for Node.js in TypeScript. Wraps a raw socket into a `TelnetStream` that 
 ## Install
 
 ```sh
-npm install
+npm install @svene/tell
 ```
 
 ## Use
 
 ```ts
-import { Server } from "tell";
+import { Server } from "@svene/tell";
 
 const server = Server((connection) => {
   const [width, height] = connection.windowSize ?? [0, 0];

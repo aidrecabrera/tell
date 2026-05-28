@@ -1,7 +1,7 @@
 {
-  "name": "tell",
+  "name": "@svene/tell",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "type": "commonjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
