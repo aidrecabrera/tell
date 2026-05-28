@@ -156,3 +156,12 @@ Try `/ping 8.8.8.8` or `/export`.
 ## Status
 
 Early. Not battle-tested. Use at your own risk in anything that matters.
+
+## Further Reading
+
+- [RFC 854 — Telnet Protocol Specification](https://www.rfc-editor.org/info/rfc854/)
+- [RFC 855 — Telnet Option Specification](https://www.rfc-editor.org/info/rfc855/)
+- [RFC 1091 — Telnet Terminal-Type Option](https://www.rfc-editor.org/info/rfc1091/)
+- [RFC 1143 — The Q Method of Implementing Telnet Option Negotiation](https://www.rfc-editor.org/info/rfc1143/)
+- [RFC 1571 — Telnet Environment Option Interoperability](https://www.rfc-editor.org/info/rfc1571/)
+- [RFC 1572 — Telnet Environment Option](https://www.rfc-editor.org/info/rfc1572/)
