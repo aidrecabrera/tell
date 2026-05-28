@@ -50,14 +50,14 @@ interface Logger {
 }
 ```
 
-pino, winston, consola — wrap them to match the interface and you're done. See `examples/arpanet/logger.ts` for a pino adapter.
+pino, winston, consola - wrap them to match the interface and you're done. See `examples/arpanet/logger.ts` for a pino adapter.
 
 ## Structure
 
 ```
-packages/tell/          — the library (zero runtime deps)
-examples/arpanet/       — multi-user time-sharing system (pino, figlet, cli-table3, picocolors)
-examples/mikrotik-demo/ — MikroTik RouterOS simulator (pino, cli-table3, picocolors)
+packages/tell/          - the library (zero runtime deps)
+examples/arpanet/       - multi-user time-sharing system (pino, figlet, cli-table3, picocolors)
+examples/mikrotik-demo/ - MikroTik RouterOS simulator (pino, cli-table3, picocolors)
 ```
 
 ## Scripts
@@ -148,20 +148,20 @@ Try `/ping 8.8.8.8` or `/export`.
 
 ## API
 
-- `Server(listener, options?)` — creates a `net.Server`, negotiates telnet options, passes a ready `TelnetStream` to the listener
-- `TelnetStream` — emits `data`, `end`, `close`, `error`, `resize`, `environment`, `interrupt`, `suspend`, `will`, `wont`, `do`, `dont`, `negotiated`
-- `Commands`, `Options` — protocol byte constants
-- `noopLogger` — silent logger (the default)
+- `Server(listener, options?)` - creates a `net.Server`, negotiates telnet options, passes a ready `TelnetStream` to the listener
+- `TelnetStream` - emits `data`, `end`, `close`, `error`, `resize`, `environment`, `interrupt`, `suspend`, `will`, `wont`, `do`, `dont`, `negotiated`
+- `Commands`, `Options` - protocol byte constants
+- `noopLogger` - silent logger (the default)
 
 ## Status
 
-Early. Not battle-tested. Use at your own risk in anything that matters.
+Early. Not battle-tested, only used in some of my projects. Use at your own risk in anything that matters.
 
 ## Further Reading
 
-- [RFC 854 — Telnet Protocol Specification](https://www.rfc-editor.org/info/rfc854/)
-- [RFC 855 — Telnet Option Specification](https://www.rfc-editor.org/info/rfc855/)
-- [RFC 1091 — Telnet Terminal-Type Option](https://www.rfc-editor.org/info/rfc1091/)
-- [RFC 1143 — The Q Method of Implementing Telnet Option Negotiation](https://www.rfc-editor.org/info/rfc1143/)
-- [RFC 1571 — Telnet Environment Option Interoperability](https://www.rfc-editor.org/info/rfc1571/)
-- [RFC 1572 — Telnet Environment Option](https://www.rfc-editor.org/info/rfc1572/)
+- [RFC 854 - Telnet Protocol Specification](https://www.rfc-editor.org/info/rfc854/)
+- [RFC 855 - Telnet Option Specification](https://www.rfc-editor.org/info/rfc855/)
+- [RFC 1091 - Telnet Terminal-Type Option](https://www.rfc-editor.org/info/rfc1091/)
+- [RFC 1143 - The Q Method of Implementing Telnet Option Negotiation](https://www.rfc-editor.org/info/rfc1143/)
+- [RFC 1571 - Telnet Environment Option Interoperability](https://www.rfc-editor.org/info/rfc1571/)
+- [RFC 1572 - Telnet Environment Option](https://www.rfc-editor.org/info/rfc1572/)
