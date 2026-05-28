@@ -71,6 +71,8 @@ npm run mikrotik     # build & run the RouterOS simulator
 
 ## Running the examples
 
+<img src="assets/arpanet.svg" alt="Arpanet time-sharing demo" style="max-width:100%;height:auto">
+
 Start the arpanet time-sharing system:
 
 ```sh
@@ -104,8 +106,6 @@ lovelace
 admin@lovelace$ logout
 goodbye.
 ```
-
-<img src="assets/arpanet.svg" alt="Arpanet time-sharing demo" style="max-width:100%;height:auto">
 
 Start the MikroTik RouterOS simulator:
 
