@@ -8,11 +8,11 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "tell": "*",
-    "pino": "9.10.0",
-    "picocolors": "1.1.1",
     "cli-table3": "0.6.5",
-    "figlet": "1.11.0"
+    "figlet": "^1.11.3",
+    "picocolors": "1.1.1",
+    "pino": "9.10.0",
+    "tell": "*"
   },
   "devDependencies": {
     "@types/node": "22.15.21",
